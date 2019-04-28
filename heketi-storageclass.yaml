@@ -1,0 +1,14 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: gluster-heketi
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/glusterfs
+parameters:
+  resturl: "http://api.328ym.com:30944"
+  clusterid: "38c2729af0f42338cf66eed6b80f116f"
+  restuser: "admin"
+  secretNamespace: "default"
+  secretName: "heketi-secret"
+  volumetype: "none"
